@@ -79,7 +79,7 @@
 
 
         <v-sheet light class="white">
-            <div class="py-2">
+            <v-container class="py-2">
                 <div class="text-center my-2">
                     <div class="d-inline-flex mb-4">
                         <v-avatar class="primary"
@@ -97,7 +97,7 @@
                         <v-divider role="separator" aria-orientation="horizontal" class=" theme--light"/>
                     </v-responsive>
                 </div>
-                <v-responsive class=" mx-auto" style="max-width: 1200px;">
+                <v-responsive class="mx-auto" style="max-width: 1200px;">
                     <div class="v-responsive__content">
                         <div class="text-h6 text-lg-h5 mt-4">
                             Servicios especializados de “c” en su calidad de empresa
@@ -107,7 +107,7 @@
                         </div>
                     </div>
                 </v-responsive>
-            </div>
+            </v-container>
             <v-container class=" py-4 py-lg-8">
                 <v-row class="row">
                     <v-col v-for="item in services" :key="item.id"
@@ -134,7 +134,7 @@
 
 
         <div class="v-sheet theme--light transparent">
-            <div class="container py-4 py-lg-8">
+            <v-container class=" py-4 py-lg-8">
                 <div class="text-center">
                     <div class="text-uppercase font-weight-bold body-2 primary--text mb-2">Trabajando con nosotros</div>
                     <h1 class="text-uppercase text-h5 font-weight-bold mb-2 text-center">
@@ -143,12 +143,12 @@
                     <v-responsive class="primary mx-auto mb-2" style="max-width: 28px;">
                         <v-divider role="separator" aria-orientation="horizontal" class=" theme--light"/>
                     </v-responsive>
-                    <v-responsive  class="mx-auto" style="max-width: 1200px;">
-                            <div class="text-h6 text-lg-h5 mt-4 text-justify">
-                                Contamos con un grupo de profesionales altamente
-                                comprometidos y calificados que ponen su experiencia al servicio de los
-                                usuarios, empresas e instituciones
-                            </div>
+                    <v-responsive class="mx-auto" style="max-width: 1200px;">
+                        <div class="text-h6 text-lg-h5 mt-4 text-justify">
+                            Contamos con un grupo de profesionales altamente
+                            comprometidos y calificados que ponen su experiencia al servicio de los
+                            usuarios, empresas e instituciones
+                        </div>
                     </v-responsive>
                 </div>
 
@@ -190,7 +190,7 @@
                         <div class="text-h6 secondary--text">Director of Operations</div>
                     </div>
                 </div>
-            </div>
+            </v-container>
         </div>
     </app-layout>
 </template>

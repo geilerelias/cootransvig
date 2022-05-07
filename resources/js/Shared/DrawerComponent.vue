@@ -1,20 +1,25 @@
 <template>
     <v-navigation-drawer nav v-model="drawer" class="text-start py-12" app temporary>
-        <v-list-item>
-            <v-list-item-avatar>
-                <!--                <v-img :src="require('@/../img/15.jpg')"></v-img>-->
-            </v-list-item-avatar>
+        <v-list>
+            <v-list-item>
+                <v-list-item>
+                    <v-img height="100"  :aspect-ratio="16/9" contain :src="logo"></v-img>
+                </v-list-item>
+            </v-list-item>
 
-            <v-list-item-content>
-                <v-list-item-title>Jenis Sagbini</v-list-item-title>
-            </v-list-item-content>
-        </v-list-item>
-
-        <v-list-item>
-            <v-list-item-content>
-                <v-list-item-subtitle>¡Haciendo a la Gente Exitosa en un mundo cambiante!.</v-list-item-subtitle>
-            </v-list-item-content>
-        </v-list-item>
+            <v-list-item>
+                <v-list-item-content>
+                    <v-list-item-title class="text-uppercase font-weight-regular subtitle-1 mx-auto">
+                        <inertia-link
+                            class="font-weight-black font-weight-bold primary--text"
+                            href="/">
+                            Cootransvig
+                        </inertia-link>
+                    </v-list-item-title>
+                    <v-list-item-subtitle>Eslogan de la cooperativa</v-list-item-subtitle>
+                </v-list-item-content>
+            </v-list-item>
+        </v-list>
 
         <v-divider></v-divider>
 
@@ -48,12 +53,14 @@
 
 <script>
 import {mapMutations, mapState} from "vuex";
+import logo from '@/../images/logo.png'
 
 export default {
     data() {
         return {
             group: null,
             item: parseInt(this.pagina),
+            logo
         };
     },
     computed: {
