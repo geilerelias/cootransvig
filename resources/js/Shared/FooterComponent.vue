@@ -2,86 +2,89 @@
     <div>
         <svg data-v-49310640="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1442 163" class="logos-bg">
             <path data-v-49310640=""
-                  d="m-3.90909,6l48.30303,16c48.30303,16 144.90908,48 241.51514,48c96.60606,0 193.21211,-32 289.81817,-32c96.60606,0 193.21211,32 289.81817,53.3c96.60606,21.7 193.21211,31.7 289.81817,16c96.60606,-16.3 193.21211,-58.3 241.51514,-80l48.30303,-21.3l0,160l-48.30303,0c-48.30303,0 -144.90908,0 -241.51514,0c-96.60606,0 -193.21211,0 -289.81817,0c-96.60606,0 -193.21211,0 -289.81817,0c-96.60606,0 -193.21211,0 -289.81817,0c-96.60606,0 -193.21211,0 -241.51514,0l-48.30303,0l0,-160z"></path>
+                  d="m-3.90909,6l48.30303,16c48.30303,16 144.90908,48 241.51514,48c96.60606,0 193.21211,-32 289.81817,-32c96.60606,0 193.21211,32 289.81817,53.3c96.60606,21.7 193.21211,31.7 289.81817,16c96.60606,-16.3 193.21211,-58.3 241.51514,-80l48.30303,-21.3l0,160l-48.30303,0c-48.30303,0 -144.90908,0 -241.51514,0c-96.60606,0 -193.21211,0 -289.81817,0c-96.60606,0 -193.21211,0 -289.81817,0c-96.60606,0 -193.21211,0 -289.81817,0c-96.60606,0 -193.21211,0 -241.51514,0l-48.30303,0l0,-160z">
+            </path>
         </svg>
         <v-footer class="white v-sheet theme--light" data-booted="true">
             <v-container class=" py-5">
                 <v-row class="row">
-                    <v-col class="col-md-2 col-lg-3 col-xl-4 col-12">
+                    <v-col class="col-md-4 col-lg-4 col-xl-4 col-12">
                         <div class="mb-2">
-                            <a href="/ui/landing/footer/footer3#"
-                                             class="d-flex align-center text-decoration-none mr-2"><span
-                            class="font-weight-black text-uppercase text-h5 text-truncate"> Cootransvig </span></a></div>
-                        <div class="text-body-1">
-                            <div>W Shoreline Dr, Long Beach, Los Angeles, CA 90802 USA</div>
-                            <div class="font-weight-bold mt-2">Email</div>
-                            <div><a href="#" class="text-decoration-none caption">hello@loremcompany.com</a></div>
-                        </div>
-                    </v-col>
-                    <div class="col-md-2 col-12">
-                        <div class="mb-3 body-1 font-weight-bold">Product</div>
-                        <div v-for="item in 4" :key="item.id" class="my-1 body-1">
-                            <a href="#"
-                               class="text-decoration-none primary--text text--lighten-2">
-                                Product {{item}}
+                            <a href="/"
+                               class="d-flex align-center text-decoration-none mr-2">
+                                <span
+                                    class="font-weight-black text-uppercase text-h5 text-truncate"> Cootransvig
+                                </span>
                             </a>
                         </div>
-
-                    </div>
-                    <v-col class="col-md-2 col-12">
-                        <div class="mb-3 body-1 font-weight-bold">Resources</div>
-                        <div class="my-1 body-1"><a href="/ui/landing/footer/footer3#"
-                                                    class="text-decoration-none primary--text text--lighten-2">Documentation</a>
-                        </div>
-                        <div class="my-1 body-1"><a href="/ui/landing/footer/footer3#"
-                                                    class="text-decoration-none primary--text text--lighten-2">News</a>
-                        </div>
-                        <div class="my-1 body-1"><a href="/ui/landing/footer/footer3#"
-                                                    class="text-decoration-none primary--text text--lighten-2">FAQ</a>
-                        </div>
-                        <div class="my-1 body-1"><a href="/ui/landing/footer/footer3#"
-                                                    class="text-decoration-none primary--text text--lighten-2">Packages</a>
-                        </div>
-                        <div class="my-1 body-1"><a href="/ui/landing/footer/footer3#"
-                                                    class="text-decoration-none primary--text text--lighten-2">Components</a>
+                        <div class="text-body-1">
+                            <div>Villanueva, La Guajira Colombia</div>
+                            <div class="font-weight-bold mt-2">Email</div>
+                            <div><a href="#" class="text-decoration-none caption">contacto@cootransvig.com</a></div>
                         </div>
                     </v-col>
-                    <div class="col-md-2 col-12">
-                        <div class="mb-3 body-1 font-weight-bold">Company</div>
-                        <div class="my-1 body-1"><a href="/ui/landing/footer/footer3#"
-                                                    class="text-decoration-none primary--text text--lighten-2">About
-                            us</a></div>
-                        <div class="my-1 body-1"><a href="/ui/landing/footer/footer3#"
-                                                    class="text-decoration-none primary--text text--lighten-2">Carrers</a>
+                    <div class="col-md-2 col-lg-3 col-12">
+                        <div class="mb-3 body-1 font-weight-bold">Servicios</div>
+                        <div v-for="item in services" :key="item.id" class="my-1 body-1">
+                            <a class="justify-md-start mt-2 caption text-decoration-none primary--text text--lighten-2">
+                                <v-icon color="primary" light left size="18">
+                                   {{item.icon}}
+                                </v-icon>
+                                {{item.name}}
+                            </a>
                         </div>
-                        <div class="my-1 body-1"><a href="/ui/landing/footer/footer3#"
-                                                    class="text-decoration-none primary--text text--lighten-2">Press</a>
+                    </div>
+                    <div class="col-md-2 col-lg-2 col-12">
+                        <div class="mb-3 body-1 font-weight-bold">Enlaces utiles</div>
+
+                        <div v-for="item in links" :key="item.id" class="my-1 body-1">
+                            <a :href="item.route" class=" caption text-decoration-none primary--text text--lighten-2">
+                                {{item.title}}
+                            </a>
                         </div>
                     </div>
                     <div class="col-md-4 col-lg-3 col-xl-2 col-12">
-                        <div class="font-weight-bold mb-3">Download Apps</div>
-                        <button type="button"
-                                class="justify-md-start v-btn v-btn--block v-btn--outlined theme--light v-size--x-large secondary--text">
-                            <span class="v-btn__content"><i aria-hidden="true"
-                                                            class="v-icon notranslate v-icon--left mdi mdi-google-play theme--light"
-                                                            style="font-size: 36px;"></i><div
-                                class="d-flex flex-column text-left pl-2"><div class="textbase--text">Google Play</div><div
-                                class="caption">Get it Now</div></div></span></button>
-                        <button type="button"
-                                class="justify-md-start mt-2 v-btn v-btn--block v-btn--outlined theme--light v-size--x-large secondary--text">
-                            <span class="v-btn__content"><i aria-hidden="true"
-                                                            class="v-icon notranslate v-icon--left mdi mdi-apple theme--light"
-                                                            style="font-size: 36px;"></i><div
-                                class="d-flex flex-column text-left pl-2"><div class="textbase--text">App Store</div><div
-                                class="caption">Get it Now</div></div></span></button>
+                        <div class="font-weight-bold mb-3">Descarga nuestra APP</div>
+                        <v-btn block outlined x-large class="justify-md-start secondary--text">
+                            <v-icon left light class="" size="36">
+                                mdi-google-play
+                            </v-icon>
+                            <div class="d-flex flex-column text-left pl-2">
+                                <div class="textbase--text">Google Play</div>
+                                <div class="caption">Consiguelo ahora</div>
+                            </div>
+                        </v-btn>
+
+                        <v-btn block outlined x-large light class="justify-md-start mt-2 secondary--text">
+                            <v-icon light left size="36">
+                                mdi-apple
+                            </v-icon>
+                            <div class="d-flex flex-column text-left pl-2">
+                                <div class="textbase--text">App Store</div>
+                                <div class="caption">Consiguelo ahora</div>
+                            </div>
+                        </v-btn>
                     </div>
                 </v-row>
+
             </v-container>
+
         </v-footer>
+
+        <v-container class="my-0">
+            <div fluid class="d-flex align-center justify-center" >
+                <p class="d-inline ">
+                    <a href="#" >Términos y Condiciones</a>
+                    |  <a href="#modalPoliticas" data-toggle="modal">Políticas de Privacidad</a>
+                    |  Diseñado por: &nbsp;<span class="secondary--text "> Kendy Liceth Alfaro & Eynys Mcken Perez</span> © 2022
+                </p>
+            </div>
+        </v-container>
     </div>
 </template>
 
 <script>
+import {mapMutations, mapState} from "vuex";
 import WhatsappMessageButton from '@/components/WhatsappMessageButton'
 
 export default {
@@ -119,17 +122,10 @@ export default {
                 //     route: 'https://api.whatsapp.com/send?phone=573002900321'
                 // },
             ],
-            services: [
-                {name: 'Desarrollo Web', src: '', route: ''},
-                {name: 'Auditoría de Sistemas', src: '', route: ''},
-                {name: 'Marketing', src: '', route: ''},
-                {name: 'Emprendimiento', src: '', route: ''},
-                {name: 'Capacitaciones', src: '', route: ''},
-                {name: 'Investigación', src: '', route: ''},
-                {name: 'Asesorías', src: '', route: ''},
-            ]
-
         };
+    },
+    computed: {
+        ...mapState(["links", "services"]),
     },
     methods: {
         cambiarAbsolute() {

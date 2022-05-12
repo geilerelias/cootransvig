@@ -49,6 +49,27 @@ const store = new Vuex.Store({
             }
 
         ],
+        services: [
+            {
+                name: 'Viajes',
+                icon: 'mdi-car-side',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, repudiandae, rerum! Facere facilis, nemo? Ad animi debitis nemo nihil provident'
+            },
+            {
+                name: 'Encomiendas',
+                icon: 'mdi-package-variant-closed',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, repudiandae, rerum! Facere facilis, nemo? Ad animi debitis nemo nihil provident'
+            },
+            {
+                name: 'Servicio especial',
+                icon: 'mdi-car-estate',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, repudiandae, rerum! Facere facilis, nemo? Ad animi debitis nemo nihil provident'
+            }, {
+                name: 'Servicio escolar',
+                icon: 'mdi-bus-school',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, repudiandae, rerum! Facere facilis, nemo? Ad animi debitis nemo nihil provident'
+            },
+        ],
         expand: false,
     },
     getters: {
