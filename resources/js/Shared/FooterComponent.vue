@@ -18,9 +18,26 @@
                             </a>
                         </div>
                         <div class="text-body-1">
-                            <div>Villanueva, La Guajira Colombia</div>
-                            <div class="font-weight-bold mt-2">Email</div>
-                            <div><a href="#" class="text-decoration-none caption">contacto@cootransvig.com</a></div>
+
+
+                            <div class="d-flex mb-2 font-weight-bold">
+                              <i aria-hidden="true" class="v-icon notranslate mr-2 mdi mdi-map-marker-outline theme--light grey--text text--lighten-1"></i>
+                              Calle 14 N° 7-10 Barrio San Luis Villanueva – Guajira
+                            </div>
+
+                            <div class="d-flex mb-2">
+                              <i aria-hidden="true" class="v-icon notranslate mr-2 mdi mdi-phone-outline theme--light grey--text text--lighten-1"></i>
+                              <a href="tel:+573003655682" class="text-decoration-none black--text  text--lighten-2">
+                                +57 3003655682
+                              </a>
+                            </div>
+
+                            <div class="d-flex mb-2">
+                              <i aria-hidden="true" class="v-icon notranslate mr-2 mdi mdi-email-outline theme--light grey--text text--lighten-1"></i>
+                              <a href="mailto:cootransvigadm1@gmail.com" class="text-decoration-none black--text  text--lighten-2">
+                                cootransvigadm1@gmail.com
+                              </a>
+                            </div>
                         </div>
                     </v-col>
                     <div class="col-md-2 col-lg-3 col-12">
@@ -53,6 +70,7 @@
                                 <div class="textbase--text">Google Play</div>
                                 <div class="caption">Consiguelo ahora</div>
                             </div>
+
                         </v-btn>
 
                         <v-btn block outlined x-large light class="justify-md-start mt-2 secondary--text">

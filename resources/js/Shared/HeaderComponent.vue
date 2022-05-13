@@ -1,132 +1,89 @@
 <template>
-    <div>
-        <v-app-bar
-            app
-            :clipped-left="clippedLeft"
-            class="align-center"
-            :class="flat&&route().current('home') ? 'bgTranparente' : 'white'"
-            :flat="flat"
-        >
-            <inertia-link :href="route('home')"
-                          class="d-flex align-center justify-center text-decoration-none mr-1">
-                <v-avatar flat size="80" color="transparent" :aspect-ratio="1">
-                    <v-img
-                        style="max-height:80px; "
-                        :src="logo"
-                        contain
-                    />
-                </v-avatar>
-                <span class="font-weight-black text-uppercase text-h5 text-truncate hidden-sm-and-down"
-                      :class="{'white--text':flat,'primary--text':!flat}">
-                    Cootransvig
-                </span>
+<div>
+    <v-app-bar app :clipped-left="clippedLeft" class="align-center" :class="flat&&route().current('home') ? 'bgTranparente' : 'white'" :flat="flat">
+        <inertia-link :href="route('home')" class="d-flex align-center justify-center text-decoration-none mr-1">
+            <v-avatar flat size="80" color="transparent" :aspect-ratio="1">
+                <v-img style="max-height:80px; " :src="logo" contain />
+            </v-avatar>
+
+            <span v-if="(!flat&&route().current('home'))||!flat" class="font-weight-black text-uppercase text-h5 text-truncate hidden-sm-and-down" :class="{'white--text':flat,'primary--text':!flat}">
+                Cootransvig
+            </span>
+
+        </inertia-link>
 
 
-            </inertia-link>
+        <v-spacer></v-spacer>
 
 
-            <v-spacer></v-spacer>
+        <v-toolbar-items>
+            <nav class="d-flex justify-end text-end align-center">
+
+                <inertia-link v-for="item in links" :key="item.name" :href="route(item.route)" :class="{'active': route().current(item.route)}" v-if="$vuetify.breakpoint.mdAndUp||route().current(item.route)">
+
+                    <v-hover v-slot="{ hover }">
+                        <v-btn :text="!route().current(item.route) || $vuetify.breakpoint.smAndDown" depressed rounded class="text-none"
+                          :class="{ 'active primary--text font-weight-bold grey lighten-3 mr-2': route().current(item.route) && $vuetify.breakpoint.mdAndUp,'black--text':!flat, 'white--text':flat}">
+                            <v-icon :left="$vuetify.breakpoint.mdAndUp">
+                                {{ item.icon }}
+                            </v-icon>
+                            <v-expand-x-transition>
+                              <transition name="fab-transition">
+                                <span  v-if="$vuetify.breakpoint.lgAndUp || hover || route().current(item.route)">
+                                    {{ item.title }}
+                                </span>
+                                </transition>
+                            </v-expand-x-transition>
+                        </v-btn>
+                    </v-hover>
+
+                </inertia-link>
+            </nav>
+        </v-toolbar-items>
 
 
-            <v-toolbar-items>
-                <nav class="d-flex justify-end text-end align-center">
+        <div class="text-center" v-if="$page.user==null">
+            <v-menu :close-on-content-click="false" :nudge-width="200" offset-y>
+                <template v-slot:activator="{ on, attrs }">
+                    <v-app-bar-nav-icon v-bind="attrs" v-on="on" class="ml-2 hidden-sm-and-down" :class="{'white--text': flat,'black--text': flat}">
+                    </v-app-bar-nav-icon>
+                </template>
 
-                    <inertia-link v-for="item in links" :key="item.name" :href="route(item.route)"
-                                  :class="{'active': route().current(item.route)}"
-                                  v-if="$vuetify.breakpoint.mdAndUp||route().current(item.route)">
+                <v-card>
+                    <v-list>
+                        <template v-if="$page.user==null">
+                            <v-subheader>Authentication</v-subheader>
+                            <v-divider></v-divider>
+                            <v-list-item v-for="item in items" :key="item.title" :href="item.route">
+                                <v-list-item-icon>
+                                    <v-icon>{{ item.icon }}</v-icon>
+                                </v-list-item-icon>
 
-                        <v-hover
-                            v-slot="{ hover }"
-                        >
-                            <v-btn :text="!route().current(item.route) || $vuetify.breakpoint.smAndDown"
-                                   depressed
-                                   rounded
-                                   class="text-none"
-                                   :class="{ 'active primary--text font-weight-bold grey lighten-3 mr-2': route().current(item.route) && $vuetify.breakpoint.mdAndUp,'black--text':!flat, 'white--text':flat}"
-                            >
-                                <v-icon :left="$vuetify.breakpoint.mdAndUp">
-                                    {{ item.icon }}
-                                </v-icon>
-                                <v-expand-x-transition>
-                                    <span transition="fab-transition"
-                                          v-if="$vuetify.breakpoint.lgAndUp || hover || route().current(item.route)">
-                                       {{ item.title }}
-                                    </span>
-                                </v-expand-x-transition>
-                            </v-btn>
-                        </v-hover>
+                                <v-list-item-content>
+                                    <v-list-item-title>{{ item.title }}</v-list-item-title>
+                                </v-list-item-content>
+                            </v-list-item>
 
-                    </inertia-link>
-                </nav>
-            </v-toolbar-items>
+                        </template>
+                    </v-list>
+                </v-card>
+            </v-menu>
+        </div>
 
+        <v-app-bar-nav-icon class="hidden-md-and-up" :class="{'white--text': flat,'black--text': flat}" @click="drawer?setDrawer(false):setDrawer(true)"></v-app-bar-nav-icon>
+    </v-app-bar>
 
-            <div class="text-center" v-if="$page.user==null">
-                <v-menu
-                    :close-on-content-click="false"
-                    :nudge-width="200"
-                    offset-y
-                >
-                    <template v-slot:activator="{ on, attrs }">
-                        <v-app-bar-nav-icon
-                            v-bind="attrs"
-                            v-on="on"
-                            class="ml-2 hidden-sm-and-down"
-                            :class="{'white--text': flat,'black--text': flat}"
-                        >
-                        </v-app-bar-nav-icon>
-                    </template>
-
-                    <v-card>
-                        <v-list>
-                            <template v-if="$page.user==null">
-                                <v-subheader>Authentication</v-subheader>
-                                <v-divider></v-divider>
-                                <v-list-item
-                                    v-for="item in items"
-                                    :key="item.title"
-                                    :href="item.route"
-                                >
-                                    <v-list-item-icon>
-                                        <v-icon>{{ item.icon }}</v-icon>
-                                    </v-list-item-icon>
-
-                                    <v-list-item-content>
-                                        <v-list-item-title>{{ item.title }}</v-list-item-title>
-                                    </v-list-item-content>
-                                </v-list-item>
-
-                            </template>
-                        </v-list>
-                    </v-card>
-                </v-menu>
-            </div>
-
-            <v-app-bar-nav-icon
-                class="hidden-md-and-up"
-                :class="{'white--text': flat,'black--text': flat}"
-                @click="drawer?setDrawer(false):setDrawer(true)"
-            ></v-app-bar-nav-icon>
-        </v-app-bar>
-
-        <v-btn
-            v-scroll="onScroll"
-            v-show="fab"
-            fab
-            dark
-            fixed
-            bottom
-            right
-            @click="toTop"
-            color="primary"
-        >
-            <v-icon>mdi-chevron-up</v-icon>
-        </v-btn>
-    </div>
+    <v-btn v-scroll="onScroll" v-show="fab" fab dark fixed bottom right @click="toTop" color="primary">
+        <v-icon>mdi-chevron-up</v-icon>
+    </v-btn>
+</div>
 </template>
 
 <script>
-import {mapMutations, mapState} from "vuex";
+import {
+    mapMutations,
+    mapState
+} from "vuex";
 import logo from '@/../images/logo.png'
 
 export default {
@@ -142,8 +99,7 @@ export default {
                 return true
             }
         }
-    }
-    ,
+    },
     data() {
         return {
             logo: logo,
@@ -153,9 +109,16 @@ export default {
             item: 1,
             authenticated: null,
             user: null,
-            items: [
-                {title: 'Login', icon: 'mdi-account-lock', route: "/login"},
-                {title: 'Sign Up', icon: 'mdi-account-plus', route: "/register"},
+            items: [{
+                    title: 'Login',
+                    icon: 'mdi-account-lock',
+                    route: "/login"
+                },
+                {
+                    title: 'Sign Up',
+                    icon: 'mdi-account-plus',
+                    route: "/register"
+                },
             ],
 
         };
@@ -219,13 +182,17 @@ export default {
     background-color: transparent !important;
 }
 
-.expand-x-transition-enter-active, .fade-enter-active, .fade-leave-active {
+.expand-x-transition-enter-active,
+.fade-enter-active,
+.fade-leave-active {
     transition: opacity .5s
 }
 
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
-{
+.fade-enter,
+.fade-leave-to
+
+/* .fade-leave-active below version 2.1.8 */
+    {
     opacity: 0
 }
-
 </style>

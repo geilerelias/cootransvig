@@ -24,7 +24,6 @@
         <v-divider></v-divider>
 
         <v-list dense shaped>
-
             <v-list-item-group
                 v-model="group"
                 color="primary"

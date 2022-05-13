@@ -37,7 +37,7 @@
                                   <div class="d-flex justify-center align-center">
                                       <p class="base-body text-body-1 mx-auto grey--text text--darken-1 text-left mb-0"
                                          style="max-width: 700px;">
-                                          Lorem ipsum dolor sit amet, consectetur.
+                                          Calle 14 N° 7-10 Barrio San Luis Villanueva – Guajira
                                       </p>
                                   </div>
                               </div>
@@ -54,15 +54,10 @@
                                   <div class="d-flex flex-column justify-center align-center">
                                       <a
                                           class="base-body text-body-1 mx-auto grey--text text--darken-1 text-left mb-0"
-                                          href="tel:3004361660">
-                                          +57 300 436 1660
+                                          href="tel:3003655682">
+                                          +57 3003655682
                                       </a>
-                                      <a
-                                          class="base-body text-body-1 mx-auto grey--text text--darken-1 text-left mb-0"
-                                          href="tel:3003285091"
-                                      >
-                                          +57 300 328 5091
-                                      </a>
+
                                   </div>
                               </div>
                               <hr role="separator" aria-orientation="horizontal" class="my-2 v-divider theme--light">
@@ -76,9 +71,9 @@
                                   </div>
                                   <div class="d-flex flex-column justify-center  align-center">
                                       <a
-                                          href="mailto:contacto@cafeproducciones.com"
+                                          href="mailto:cootransvigadm1@gmail.com"
                                           class="text-body-1 grey--text text--darken-1 mb-0">
-                                          contacto@cafeproducciones.com
+                                          cootransvigadm1@gmail.com
                                       </a>
                                   </div>
                               </div>
